@@ -1,0 +1,4 @@
+As hosts of the Grammy Awards, Tina Fey and Amy Poehler will make their grand entrance to the stage by sled. Amy and Tina will sled down a low friction track, from the top of two separate aisles that lead directly to the stage. But, to be sure their entrance is truly grand, there will be a shower of confetti and light show that begin exactly 10 seconds after their sleds leave the top of the aisle/track. If the top of each aisle is 35 ft above the stage and 48 ft away from it, will they need to get a running start to make it to the stage in time for the light show and confetti, or can they just start sitting statically at the top of the track?
+
+You should assume that the track has a coefficient of friction of 0.2, and that the mass of both sledder and rider is 75 kg. 
+Your drawing only needs to represent Tina Fey or Amy Poehler, not both! 

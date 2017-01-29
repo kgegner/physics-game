@@ -1,0 +1,60 @@
+# Kivy Code for Transfer Game - Graphic Widgets 
+
+# Author: Kathleen Gegner
+# Update: 12/5/16
+
+# File name: graphic.kv
+
+<DynamicGraphicContainer>:
+	textbox: _textbox
+	img: _img
+	size_hint: (0.35, 0.3)
+	drag_rectangle: self.x, self.y, self.width, self.height
+	drag_timeout: 10000000
+	drag_distance: 0
+	canvas.before:
+		Color: 
+			rgba: 1,1,1,0
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	#on_touch_down:
+	#	root.tool_selected = self
+	Image:
+		id: _img
+		source: root.img_fname
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+		size_hint: (root.img_width, root.img_height)
+		allow_stretch: True
+		keep_ratio: False
+	TextInput:
+		id: _textbox
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+		size_hint: None, None
+		size: (40, 27)
+		multiline: False
+		on_text_validate:
+			root.change_graphic_size()
+
+
+<StaticGraphicContainer>:
+	img: _img
+	size_hint: (0.35, 0.3)
+	drag_rectangle: self.x, self.y, self.width, self.height
+	drag_timeout: 10000000
+	drag_distance: 0
+	canvas.before:
+		Color: 
+			rgba: 1,1,1,0
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	#on_touch_down:
+	#	root.tool_selected = self
+	Image:
+		id: _img
+		source: root.img_fname
+		pos_hint: {'center_x': 0.5, 'top': 1}
+		size_hint: (root.img_width, root.img_height)
+		keep_data: True
+

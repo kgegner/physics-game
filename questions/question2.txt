@@ -1,0 +1,3 @@
+Adele is performing her song Skyfall. She decides to sing the last part of her song from a moving ski-lift. At the very end of the song she will fall from the ski-lift into a pile of snow. The ski lift maintains a height of 24 inches above the snow pile. How fast must the ski-lift be traveling to ensure Adele lands safely in the snow pile that is located 40 inches from where she plans to fall off the ski-lift?
+
+You should ignore the effects of air resistance and assume that she falls off of the ski-lift with no initial downward velocity.

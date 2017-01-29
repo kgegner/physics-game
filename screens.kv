@@ -1,0 +1,358 @@
+# Kivy Code for Transfer Game - Problem Screen Widgets 
+
+# Author: Kathleen Gegner
+# Update: 12/3/16
+
+# File name: problem.kv
+
+#:import COLORS consts.COLORS
+#:import FONTS consts.FONTS
+#:import TOOL_BUTTON_INFO consts.TOOL_BUTTON_INFO
+
+
+<TextPopup>:
+	btn: _btn
+	label: _label
+	auto_dismiss: False
+	FloatLayout:
+		Label:
+			id: _label
+			pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+			size_hint: (0.9, 0.9)
+			# Text parameters
+			text_size: self.size
+			font_name: FONTS['open_sans']['regular']
+			font_size: 14
+			halign: 'center'
+			valign: 'middle'
+		Button:
+			id: _btn
+			pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+			size_hint: (0.2, 0.1)
+			text: 'Got it!'
+			on_press:
+				root.dismiss()
+
+			
+<HomeScreen>:
+	name: 'home'
+	canvas.before:
+		Color:
+			rgba: COLORS['white']['rgba']
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	Label:
+		# Label parameters
+		pos_hint: {'center_x': 0.5, 'top': 0.95}
+		size_hint: (1, 0.1)
+		# Text parameters
+		text: 'Grammy Planning Headquarters'
+		text_size: self.width-30, self.height-20
+		font_size: 22
+		font_name: FONTS['open_sans']['bold'] 
+		color: COLORS['pink']['rgba']
+		halign: 'center'
+		valign: 'middle'
+	Label:
+		# Text parameters
+		text: root.greeting
+		text_size: root.width - 400, self.height
+		font_size: 16
+		font_name: FONTS['open_sans']['semibold']
+		halign: 'left'
+		valign: 'middle'
+		# Label parameters
+		pos_hint: {'center_x': 0.5, 'top': 0.8}
+		size_hint: (1, 0.4)
+		color: 1,1,1,1
+		canvas.before:
+			Color:
+				rgba: COLORS['blue']['rgba']
+			Rectangle:
+				pos: self.pos
+				size: self.size
+	Button:
+		# Button parameters
+		pos_hint: {'center_x': 0.45, 'center_y': 0.1}
+		size_hint: (0.08, 0.05)
+		background_normal: '.graphics/buttons/white.png'
+		background_color: COLORS['pink']['rgba']
+		# Text parameters
+		text: 'YES'
+		font_name: FONTS['open_sans']['bold']
+		on_press:
+			root.yes_pressed()
+	Button:
+		# Button parameters
+		pos_hint: {'center_x': 0.55, 'center_y': 0.1}
+		size_hint: (0.08, 0.05)
+		background_normal: '.graphics/buttons/white.png'
+		background_color: COLORS['pink']['rgba'] 
+		# Text parameters
+		text: 'NO'
+		font_name: FONTS['open_sans']['bold']
+		on_press:
+			root.no_pressed()
+
+
+<HeadingContainer>:
+	id: heading
+	circle1: _circle1
+	circle2: _circle2
+	circle3: _circle3
+	pos_hint: {'center_x': 0.5, 'top':1}
+	size_hint: (1, 0.05)
+	canvas:
+		Color: 
+			rgba: COLORS['dblue']['rgba']
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	Button:
+		# Text parameters
+		text: '<<<'
+		font_size: 25
+		font_name: FONTS['arial']['bold']
+		# Button parameters
+		size_hint: (0.06, 1)
+		pos_hint: {'left': 0, 'center_y': 0.5}
+		background_normal: './graphics/buttons/white.png'
+		background_color: COLORS['dblue']['rgba']
+		on_press:
+			root.screen_backward()
+	Label:
+		id: _circle1
+		size_hint: (0.02, 0.5)
+		pos_hint: {'center_x': 0.43, 'center_y': 0.5}
+		text: root.circle1_text
+		font_name: FONTS['open_sans']['bold']
+		canvas.before:
+			Color:
+				rgba: root.circle1_color
+			Ellipse:
+				pos: self.pos
+				size: self.size
+	Label:
+		id: _circle2
+		size_hint: (0.02, 0.5)
+		pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+		text: root.circle2_text
+		font_name: FONTS['open_sans']['bold']
+		canvas.before:
+			Color:
+				rgba: root.circle2_color
+			Ellipse:
+				pos: self.pos
+				size: self.size
+	Label:
+		id: _circle3
+		size_hint: (0.02, 0.5)
+		pos_hint: {'center_x': 0.57, 'center_y': 0.5}
+		text: root.circle3_text
+		font_name: FONTS['open_sans']['bold']
+		canvas.before:
+			Color:
+				rgba: root.circle3_color
+			Ellipse:
+				pos: self.pos
+				size: self.size
+	Button:
+		# Text parameters
+		text: '>>>'
+		font_size: 25
+		font_name: FONTS['arial']['bold']
+		# Button parameters
+		size_hint: (0.06, 1)
+		pos_hint: {'right': 1, 'center_y': 0.5}
+		background_normal: './graphics/buttons/white.png'
+		background_color: COLORS['dblue']['rgba']
+		on_press:
+			root.screen_forward()
+
+
+<TitleLabel@Label>:
+	# Label parameters
+	pos_hint: {'center_x': 0.5, 'top': 1}
+	# Text parameters
+	text_size: root.width-20, root.height
+	font_size: 17
+	font_name: FONTS['open_sans']['bold']
+	color: COLORS['pink']['rgba']
+	halign: 'left'
+	valign: 'top'
+
+
+<QuestionContainer>:
+	pos_hint: {'center_x':0.5, 'top': 0.95}
+	size_hint: (1, 0.25)
+	TitleLabel:
+		text: root.question_title
+	Label:
+		# Label parameters
+		pos_hint: {'center_x': 0.5, 'top': 0.85}
+		# Text parameters
+		text: root.question_text
+		text_size: root.width-30, root.height-20
+		font_size: 15
+		font_name: FONTS['open_sans']['semibold']
+		halign: 'left'
+		valign: 'middle'
+		color: COLORS['white']['rgba']
+		canvas.before:
+			Color:
+				rgba: COLORS['blue']['rgba']
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+				
+<WorkspaceContainer>:
+	pos_hint: {'left':0, 'bottom': 0}
+	size_hint: (0.75, 0.65)
+	canvas:
+		Color:
+			rgba: COLORS['white']['rgba']
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	TitleLabel:
+		text: 'Workspace'
+
+		
+<ToolboxContainer>:
+	pos_hint: {'right':1, 'bottom': 0}
+	size_hint: (0.25, 0.65)
+	canvas:
+		Color:
+			rgba: COLORS['gray']['rgba']
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	TitleLabel:
+		text: 'Toolbox'
+
+	
+<ProblemScreen>:
+	workspace: _workspace
+	toolbox: _toolbox
+	canvas:
+		Color:
+			rgba: COLORS['white']['rgba']
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	WorkspaceContainer:
+		id: _workspace
+		playbtn: _playbtn
+		Button:
+			id: _playbtn
+			size_hint: (0.08, 0.08)
+			pos_hint: {'center_x': 0.5, 'y': 0.03}
+			text: 'Play'
+			font_size: 16
+			font_name: FONTS['open_sans']['bold']
+			background_normal: './graphics/buttons/white.png'
+			background_color: COLORS['pink']['rgba']
+			on_press:
+				root.playbtn_callback()
+	ToolboxContainer:
+		id: _toolbox
+		Button:
+			id: h_dim
+			pos: (root.toolbox.x+13, root.toolbox.top-112)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['h_dim']
+			on_press:
+				root.add_tool('h_dim', 0.6, 0.1)
+		Button:
+			id: v_dim
+			pos: (root.toolbox.x+113, root.toolbox.top-112)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['v_dim']
+			on_press:
+				root.add_tool('v_dim', 0.1, 0.5)
+		Button:
+			id: road
+			pos: (root.toolbox.x+213, root.toolbox.top-112)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['road']
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_press:
+				root.add_tool('road',0.75, 0.1)
+				self.disabled = True
+		Button:
+			pos: (root.toolbox.x+13, root.toolbox.top-194)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['beyonce'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_press:
+				root.add_tool('beyonce', 0.2, 0.18)
+				self.disabled = True
+		Button:
+			id: lift
+			pos: (root.toolbox.x+113, root.toolbox.top-194)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['lift'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_press:
+				root.add_tool('lift', 0.15, 0.24)
+				self.disabled = True
+		Button:
+			id: pile
+			pos: (root.toolbox.x+213, root.toolbox.top-194)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['pile']
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_press:
+				root.add_tool('pile', 0.17, 0.24)
+				self.disabled = True
+		Button:
+			id: hill
+			pos: (root.toolbox.x+13, root.toolbox.top-276)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['hill']
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_press:
+				root.add_tool('hill', 0.5, 0.4)
+				self.disabled = True
+		Button:
+			pos: (root.toolbox.x+113, root.toolbox.top-276)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['jay-z'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_release: 
+				root.add_tool('jay-z', 0.13, 0.2)
+				self.disabled = True
+		Button:
+			pos: (root.toolbox.x+213, root.toolbox.top-276)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['taylor'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_release: 
+				root.add_tool('taylor', 0.13, 0.2)
+				self.disabled = True
+		Button:
+			pos: (root.toolbox.x+13, root.toolbox.top-358)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['adele'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_release: 
+				root.add_tool('adele', 0.13, 0.2)
+				self.disabled = True
+		Button:
+			pos: (root.toolbox.x+113, root.toolbox.top-358)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['amy'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_release: 
+				root.add_tool('amy', 0.15, 0.3)
+				self.disabled = True
+		Button:
+			pos: (root.toolbox.x+213, root.toolbox.top-358)
+			size_hint: (0.28, 0.14)
+			background_normal: TOOL_BUTTON_INFO['tina'] 
+			background_disabled_normal: './graphics/buttons/button_disabled.png'
+			on_release: 
+				root.add_tool('tina', 0.15, 0.3)
+				self.disabled = True
