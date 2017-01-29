@@ -1,13 +1,10 @@
-# physics-game
-
 # Installing Software
 
 ## Install Python 3.4
 1. Download the appropriate Python file for your computer version here:  
 https://www.python.org/downloads/release/python-343/
 
-2. Once the download is complete, click on the file and the installer
-will start.
+2. Once the download is complete, click on the file and the installer will start.
 
 3. Follow the installation steps, until it is finished.
 
