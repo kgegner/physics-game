@@ -13,10 +13,10 @@ For more help see: https://kivy.org/docs/installation/installation-osx.html
 
 1. Open a terminal window (this assumes you are using OSX)
 
-2. Copy the following into the command prompt, to install homebrew (See http://brew.sh/ for more info)  
+2. Copy the following into the command prompt, to install homebrew (See http://brew.sh/ for more info):  
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-3. Install the required files for Kivy, by copying the following into the same terminal window command line  
+3. Install the required files for Kivy, by copying the following into the same terminal window command line:    
 brew install sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer
 
 4. Install Cython and Kivy, by copying the following into the same terminal window command line. Enter each one separately.  
