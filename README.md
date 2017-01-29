@@ -43,5 +43,5 @@ ls
 1. If you have not just completed step 4 from the previous section, navigate to the folder where all the project files are saved, in a terminal window. For example, if you saved everything in the Documents folder, then in another folder called School, and then finally in a folder called Game, this is what you should copy into your command line:  
 cd ~/Documents/School/Game
 
-2. Run the application by typing
+2. Run the application by typing the following into your terminal window:  
 python transfer.py
