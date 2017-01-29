@@ -1,5 +1,5 @@
 # Project Description
-Contributors: Kathleen Gegner, Aileen Bai, and Zack Tucker
+Contributors: Kathleen Gegner, Aileen Bai, and Zack Tucker  
 Code last modified: 12/7/2016
 
 This a game that helps students better visualize physics problems. (Add more later)
