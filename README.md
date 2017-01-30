@@ -30,7 +30,7 @@ pip install -I Cython==0.23
 USE_OSX_FRAMEWORKS=0 pip install kivy
 
 
-# Download the files from GitHub
+# Download GitHub Files
 
 1. Go to https://github.com/kgegner/physics-game, select the green button "Clone or Download", and select "Download Zip File"
 
