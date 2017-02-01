@@ -26,7 +26,7 @@ For more help see: https://kivy.org/docs/installation/installation-osx.html
 brew install sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer
 
 4. Install Cython and Kivy, by copying the following into the same terminal window command line. Enter each one separately.  
-pip install -I Cython==0.23
+pip install -I Cython==0.23  
 USE_OSX_FRAMEWORKS=0 pip install kivy
 
 
